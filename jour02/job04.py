@@ -1,11 +1,16 @@
 import mysql.connector
+from dotenv import load_dotenv
+import os
 
-# Créer une connexion à la base de données
+load_dotenv()
+
+password = os.getenv("PASSWORD")
+# Connexion à la base de données
 cnx = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="WeshGrow!",
-    database="laplateforme"
+    host = "localhost",
+    user = "root",
+    password = password,
+    database = "laplateforme"
 )
 
 # Créer un curseur pour exécuter des requêtes SQL

@@ -1,10 +1,15 @@
 import mysql.connector
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+password = os.getenv("PASSWORD")
 # Connexion à la base de données
 db = mysql.connector.connect(
     host = "localhost",
     user = "root",
-    password = "WeshGrow!",
+    password = password,
     database = "laplateforme"
 )
 

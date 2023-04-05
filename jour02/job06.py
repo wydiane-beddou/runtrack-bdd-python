@@ -13,19 +13,18 @@ cnx = mysql.connector.connect(
     database = "laplateforme"
 )
 
-
 # Créer un curseur
 cursor = cnx.cursor()
 
 # Exécuter la requête SQL
-query = "SELECT SUM(superficie) AS superficie_totale FROM etage;"
+query = "SELECT SUM(capacite) AS capacite_totale FROM salles;"
 cursor.execute(query)
 
 # Récuperer le résultat
 result = cursor.fetchone()[0]
 
 # Afficher le résultat
-print("La superficie de la Plateforme est de ", result, "m²")
+print("La capacité de toutes les salles est de :", result)
 
 # Fermer le curseur et la connexion
 cursor.close()
